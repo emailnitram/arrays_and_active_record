@@ -20,10 +20,13 @@ ActiveRecord::Schema.define do
 end
 
 class Dealership < ActiveRecord::Base
+  attr_accessible :name
+  
   has_many :cars
 end
 
 class Car < ActiveRecord::Base
+  attr_accessible :color, :condition, :top_speed
   CONDITION_ARRAY = ["bad", "ok", "great", "perfect"]
   COLOR_ARRAY     = ["red", "blue", "silver"]
   SPEEDS_ARRAY    = [1,2,3,4,5]
